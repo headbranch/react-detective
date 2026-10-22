@@ -1,0 +1,86 @@
+{
+  "name": "react-detective",
+  "version": "0.1.0",
+  "description": "Hover any React component to see what it is, where it lives, and an AI explanation of what it does.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/headbranch/react-detective.git"
+  },
+  "homepage": "https://github.com/headbranch/react-detective#readme",
+  "bugs": {
+    "url": "https://github.com/headbranch/react-detective/issues"
+  },
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./vite": {
+      "types": "./dist/vite.d.ts",
+      "import": "./dist/vite.js"
+    },
+    "./next": {
+      "types": "./dist/next.d.ts",
+      "import": "./dist/next.js",
+      "require": "./dist/next.cjs"
+    },
+    "./next/loader": {
+      "require": "./dist/loader.cjs",
+      "import": "./dist/loader.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js"
+    },
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "import": "./dist/client.js"
+    },
+    "./server": {
+      "types": "./dist/server.d.ts",
+      "import": "./dist/server.js"
+    }
+  },
+  "bin": {
+    "react-detective": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && tsup",
+    "dev": "tsup --watch",
+    "test": "node --test --experimental-strip-types test/*.test.ts",
+    "release": "release-it"
+  },
+  "peerDependencies": {
+    "next": ">=14",
+    "react": ">=18",
+    "vite": ">=5"
+  },
+  "peerDependenciesMeta": {
+    "vite": {
+      "optional": true
+    },
+    "next": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.296",
+    "@babel/parser": "^8.0.7",
+    "@babel/traverse": "^8.0.7",
+    "diff": "^9.0.0",
+    "launch-editor": "^2.14.2",
+    "magic-string": "^1.4.3",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/babel__traverse": "^7.28.0",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "react": "^19.3.0",
+    "release-it": "^20.2.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.4"
+  }
+}
