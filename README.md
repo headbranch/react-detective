@@ -1,5 +1,7 @@
 # React Detective
 
+![React Detective explaining a SearchBox component, with its props, live values and outline](https://raw.githubusercontent.com/headbranch/react-detective/main/docs/screenshot.png)
+
 Understand a React codebase by pointing at it. Click any part of your running app and get an explanation of the component behind it: what it's for, what its props and state do, and where it's used, alongside the live values from the page you're looking at.
 
 Useful when you're new to a codebase, or when the code was written by AI and nobody has read it closely.
